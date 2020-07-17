@@ -1,6 +1,6 @@
-import React, { Component, createRef } from 'react'
+import React, { Component } from 'react'
 import { Map, TileLayer, Marker, Popup } from 'react-leaflet'
-import { render } from '@testing-library/react'
+// import { render } from '@testing-library/react'
 
 export default class Mapa extends Component {
     constructor() {
@@ -31,19 +31,13 @@ export default class Mapa extends Component {
             {this.state.markers.map((position, idx) => 
                 <Marker 
                     key={`marker-\${${idx}}`}
-                    position={position}>
-                <Popup>
-                    Marcador Criado com Click <br />.
-                </Popup>
-            </Marker>
-            )}
-                <Marker 
-                    key="initialMarker"
-                    position={this.props.center}>
+                    position={position}
+                >
                     <Popup>
-                        Insira Descrição Aqui <br /> Descrição.
+                        Descrição Aqui <br />
                     </Popup>
                 </Marker>
+            )}
             </Map>
         )
     }
